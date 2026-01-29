@@ -15,8 +15,8 @@ export const SITE_CONFIG = {
   officeName: "Office of International Affairs",
   contact: {
     address: "50 Yonsei-ro, Seodaemun-gu, Seoul 03722, Republic of Korea",
-    phone: "+82-2-2123-3488",
-    email: "oia@yonsei.ac.kr",
+    phone: "+82-2-2123-8453",
+    email: "exch@yonsei.ac.kr",
   },
   colors: {
     primary: "#003876",
@@ -106,7 +106,7 @@ export const HERO_SLIDES = [
     id: 2,
     image: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/491935138_1036405128587134_3539924212542404863_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9MIhkS87PUoQ7kNvwFNfb42&_nc_oc=Adm2stkt5xCcrRBKp1uUG8qhXtUEaFsykX_1bMGuYSLSj0sIfDwE3rRsE_6m_FaAZy8&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=NIU54GSr_XwMrlz3CikafA&oh=00_AfoBX9-9lKuSVS_IewJ_M_bz7BJpL7WX3Pr2AQlliQu7Iw&oe=69814B9B",
     title: "Building Global Leaders",
-    subtitle: "Over 600 partner institutions across 70 countries."
+    subtitle: "Over 740 partner institutions across 70 countries."
   },
   {
     id: 3,
@@ -150,7 +150,7 @@ export const QUICK_LINKS = [
   { 
     title: "Global Network", 
     icon: "Globe", 
-    description: "Our worldwide partnerships and MoUs.",
+    description: "Our worldwide partnerships and agreements.",
     href: "/partners/institutions"
   },
 ];
