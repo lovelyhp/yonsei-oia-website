@@ -428,7 +428,7 @@ const SAYProgram: React.FC = () => {
                   The final chance to drop a course. Minimum load of <strong>9 credits</strong> must be maintained.
                 </p>
                 <div className="text-[11px] text-gray-500 bg-gray-50 p-4 rounded-xl">
-                  <strong>Path:</strong> Portal > Academic Management > Course > Course Enrollment > Apply for Withdrawal
+                  <strong>Path:</strong> Portal - Academic Management - Course - Course Enrollment - Apply for Withdrawal
                 </div>
               </div>
             </div>
