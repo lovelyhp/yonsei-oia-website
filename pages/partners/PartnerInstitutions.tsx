@@ -5,26 +5,26 @@ import { Link } from 'react-router-dom';
 
 // Data structured for Admin-ready updates
 const PARTNER_DATA = [
-  { id: 1, name: "Harvard University", continent: "North America", country: "USA", website: "https://www.harvard.edu" },
+  { id: 1, name: "University of California", continent: "North America", country: "USA", website: "https://www.universityofcalifornia.edu" },
   { id: 2, name: "University of Oxford", continent: "Europe", country: "UK", website: "https://www.ox.ac.uk" },
-  { id: 3, name: "The University of Tokyo", continent: "Asia", country: "Japan", website: "https://www.u-tokyo.ac.jp" },
-  { id: 4, name: "National University of Singapore", continent: "Asia", country: "Singapore", website: "https://nus.edu.sg" },
-  { id: 5, name: "University of Melbourne", continent: "Oceania", country: "Australia", website: "https://www.unimelb.edu.au" },
-  { id: 6, name: "University of British Columbia", continent: "North America", country: "Canada", website: "https://www.ubc.ca" },
-  { id: 7, name: "ETH Zurich", continent: "Europe", country: "Switzerland", website: "https://ethz.ch" },
+  { id: 3, name: "King's College London", continent: "Europe", country: "UK", website: "https://www.kcl.ac.uk" },
+  { id: 4, name: "The University of Tokyo", continent: "Asia", country: "Japan", website: "https://www.u-tokyo.ac.jp" },
+  { id: 5, name: "Keio University", continent: "Asia", country: "Japan", website: "https://www.keio.ac.kr" },
+  { id: 6, name: "Waseda University", continent: "Asia", country: "Japan", website: "https://www.waseda.jp" },
+  { id: 7, name: "Peking University", continent: "Asia", country: "China", website: "https://english.pku.edu.cn" },
   { id: 8, name: "Tsinghua University", continent: "Asia", country: "China", website: "https://www.tsinghua.edu.cn" },
-  { id: 9, name: "University of Cape Town", continent: "Africa", country: "South Africa", website: "https://www.uct.ac.za" },
-  { id: 10, name: "University of São Paulo", continent: "South America", country: "Brazil", website: "https://www5.usp.br" },
-  { id: 11, name: "Stanford University", continent: "North America", country: "USA", website: "https://www.stanford.edu" },
-  { id: 12, name: "Imperial College London", continent: "Europe", country: "UK", website: "https://www.imperial.ac.uk" },
-  { id: 13, name: "Peking University", continent: "Asia", country: "China", website: "https://english.pku.edu.cn" },
-  { id: 14, name: "Australian National University", continent: "Oceania", country: "Australia", website: "https://www.anu.edu.au" },
-  { id: 15, name: "University of Munich", continent: "Europe", country: "Germany", website: "https://www.lmu.de" },
-  { id: 16, name: "Sorbonne University", continent: "Europe", country: "France", website: "https://www.sorbonne-universite.fr" },
-  { id: 17, name: "University of Hong Kong", continent: "Asia", country: "Hong Kong", website: "https://www.hku.hk" },
-  { id: 18, name: "McGill University", continent: "North America", country: "Canada", website: "https://www.mcgill.ca" },
-  { id: 19, name: "King's College London", continent: "Europe", country: "UK", website: "https://www.kcl.ac.uk" },
-  { id: 20, name: "Kyoto University", continent: "Asia", country: "Japan", website: "https://www.kyoto-u.ac.jp" },
+  { id: 9, name: "National University of Singapore", continent: "Asia", country: "Singapore", website: "https://nus.edu.sg" },
+  { id: 10, name: "Nanyang Technological University", continent: "Asia", country: "Singapore", website: "https://www.ntu.edu.sg" },
+  { id: 11, name: "Australian National University", continent: "Oceania", country: "Australia", website: "https://www.anu.edu.au" },
+  { id: 12, name: "University of Sydney", continent: "Oceania", country: "Australia", website: "https://www.sydney.edu.au" },
+  { id: 13, name: "University of Amsterdam", continent: "Europe", country: "Netherlands", website: "https://www.uva.nl" },
+  { id: 14, name: "Free University of Berlin", continent: "Europe", country: "Germany", website: "https://www.fu-berlin.de" },
+  { id: 15, name: "University of Vienna", continent: "Europe", country: "Austria", website: "https://www.univie.ac.at" },
+  { id: 16, name: "University of British Columbia", continent: "North America", country: "Canada", website: "https://www.ubc.ca" },
+  { id: 17, name: "University of Toronto", continent: "North America", country: "Canada", website: "https://www.utoronto.ca" },
+  { id: 18, name: "University of Auckland", continent: "Oceania", country: "New Zealand", website: "https://www.auckland.ac.nz" },
+  { id: 19, name: "University of Copenhagen", continent: "Europe", country: "Denmark", website: "https://www.ku.dk" },
+  { id: 20, name: "University of Helsinki", continent: "Europe", country: "Finland", website: "https://www.helsinki.fi" },
 ];
 
 const CONTINENTS = ["All", "Asia", "Europe", "North America", "South America", "Oceania", "Africa"];
@@ -275,7 +275,7 @@ const PartnerInstitutions: React.FC = () => {
           <div>
             <h5 className="font-bold text-[#003876] mb-1">Global Partnership Support</h5>
             <p className="text-sm text-gray-600 leading-relaxed">
-              If your institution is interested in establishing a partnership with Yonsei University, please contact the International Affairs Team at <strong>oia@yonsei.ac.kr</strong> for protocol and MoUs guidance.
+              If your institution is interested in establishing a partnership with Yonsei University, please contact the International Affairs Team at for protocol and agreements guidance.
             </p>
           </div>
         </div>

@@ -91,7 +91,7 @@ const GlobalNetwork: React.FC = () => {
                     Yonsei Frontier Lab <ExternalLink size={14} />
                   </a>
                   <span className="text-gray-300">|</span>
-                  <a href="#" className="text-[13px] font-bold text-[#003876] hover:underline flex items-center gap-1">
+                  <a href="https://pure.yonsei.ac.kr" className="text-[13px] font-bold text-[#003876] hover:underline flex items-center gap-1">
                     Researcher Pure Site <ExternalLink size={14} />
                   </a>
                 </div>
