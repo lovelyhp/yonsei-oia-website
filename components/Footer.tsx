@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 {[
                   { name: "Admissions", link: "https://admission.yonsei.ac.kr" },
                   { name: "Library", link: "https://library.yonsei.ac.kr" },
-                  { name: "Contact OIA", link: "/contact" }
+                  { name: "Contact OIA", link: "https://yonsei-oia.netlify.app/#/intro/contact" }
                 ].map((item) => (
                   <li key={item.name}>
                     <a 
