@@ -14,6 +14,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-gray-400 pt-16 pb-8 border-t border-gray-800">
       <div className="container mx-auto px-4 md:px-6">
+        {/* 상단 섹션: Brand Info + Useful Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           
           {/* Brand Info */}
@@ -51,24 +52,47 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold text-sm mb-6 uppercase tracking-widest">Related Resources</h4>
             <div className="grid grid-cols-2 gap-4">
               <ul className="space-y-3">
-                {["Yonsei Portal", "Academic Calendar", "Campus Map"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-[14px] hover:text-[#8A704C] transition-colors">{item}</a>
+                {[
+                  { name: "Yonsei Portal", link: "https://portal.yonsei.ac.kr" },
+                  { name: "Academic Calendar", link: "https://www.yonsei.ac.kr/sc/373/subview.do" },
+                  { name: "Campus Map", link: "https://www.yonsei.ac.kr/sc/242/subview.do" }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[14px] hover:text-[#8A704C] transition-colors"
+                    >
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>
+
               <ul className="space-y-3">
-                {["Admissions", "Library", "Contact OIA"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-[14px] hover:text-[#8A704C] transition-colors">{item}</a>
+                {[
+                  { name: "Admissions", link: "https://admission.yonsei.ac.kr" },
+                  { name: "Library", link: "https://library.yonsei.ac.kr" },
+                  { name: "Contact OIA", link: "/contact" }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[14px] hover:text-[#8A704C] transition-colors"
+                    >
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-        </div>
+        </div> {/* 상단 grid 섹션 닫기 (추가된 부분) */}
 
-        {/* Copyright */}
+        {/* Copyright - 하단 가로줄 구분 섹션 */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.1em]">
           <p className="text-center md:text-left">
             © {new Date().getFullYear()} {SITE_CONFIG.universityName} {SITE_CONFIG.officeName}. ALL RIGHTS RESERVED.
@@ -85,7 +109,7 @@ const Footer: React.FC = () => {
             <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
           </div>
         </div>
-      </div>
+      </div> {/* container 닫기 */}
     </footer>
   );
 };
