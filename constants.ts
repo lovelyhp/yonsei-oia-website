@@ -98,13 +98,13 @@ export const NAVIGATION_DATA: NavItem[] = [
 export const HERO_SLIDES = [
   {
     id: 1,
-    image: "https://www.yonsei.ac.kr/sites/en_sc/images/main/global_img1.png",
+    image: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/491935138_1036405128587134_3539924212542404863_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9MIhkS87PUoQ7kNvwFNfb42&_nc_oc=Adm2stkt5xCcrRBKp1uUG8qhXtUEaFsykX_1bMGuYSLSj0sIfDwE3rRsE_6m_FaAZy8&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=NIU54GSr_XwMrlz3CikafA&oh=00_AfoBX9-9lKuSVS_IewJ_M_bz7BJpL7WX3Pr2AQlliQu7Iw&oe=69814B9B",
     title: "Connecting Yonsei to the World",
     subtitle: "Experience a global education at Korea's most prestigious private university."
   },
   {
     id: 2,
-    image: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/491935138_1036405128587134_3539924212542404863_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9MIhkS87PUoQ7kNvwFNfb42&_nc_oc=Adm2stkt5xCcrRBKp1uUG8qhXtUEaFsykX_1bMGuYSLSj0sIfDwE3rRsE_6m_FaAZy8&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=NIU54GSr_XwMrlz3CikafA&oh=00_AfoBX9-9lKuSVS_IewJ_M_bz7BJpL7WX3Pr2AQlliQu7Iw&oe=69814B9B",
+    image: "https://www.yonsei.ac.kr/sites/en_sc/images/main/global_img1.png",
     title: "Building Global Leaders",
     subtitle: "Over 740 partner institutions across 70 countries."
   },
