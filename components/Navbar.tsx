@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Search, Globe, ExternalLink } from 'lucide-react';
 import { NAVIGATION_DATA, SITE_CONFIG } from '../constants';
@@ -9,6 +9,29 @@ const Navbar: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMenu = useCallback((title: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveMenu(title);
+  }, []);
+
+  const closeMenuWithDelay = useCallback(() => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+      closeTimeoutRef.current = null;
+    }, 150);
+  }, []);
+
+  const keepMenuOpen = useCallback(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +45,10 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     setIsOpen(false);
     setActiveMenu(null);
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
   }, [location.pathname]);
 
   const handleSubLinkClick = (href: string) => {
@@ -54,8 +81,8 @@ const Navbar: React.FC = () => {
               <div 
                 key={item.title}
                 className="relative group px-1"
-                onMouseEnter={() => setActiveMenu(item.title)}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu(item.title)}
+                onMouseLeave={closeMenuWithDelay}
               >
                 <Link
                   to={item.href}
@@ -92,8 +119,8 @@ const Navbar: React.FC = () => {
         className={`hidden lg:block absolute left-0 w-full bg-white border-b border-gray-100 shadow-2xl transition-all duration-300 ease-in-out transform overflow-hidden ${
           activeMenu ? 'max-h-[500px] opacity-100 py-10' : 'max-h-0 opacity-0 py-0'
         }`}
-        onMouseEnter={() => setActiveMenu(activeMenu)}
-        onMouseLeave={() => setActiveMenu(null)}
+        onMouseEnter={keepMenuOpen}
+        onMouseLeave={closeMenuWithDelay}
       >
         <div className="container mx-auto px-6 grid grid-cols-5 gap-8">
           {NAVIGATION_DATA.map((menu) => (
