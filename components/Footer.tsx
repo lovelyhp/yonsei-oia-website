@@ -106,7 +106,6 @@ const Footer: React.FC = () => {
             >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
           </div>
         </div>
       </div> {/* container 닫기 */}
