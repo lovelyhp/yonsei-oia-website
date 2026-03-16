@@ -72,10 +72,10 @@ const ESP: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/partners/institutions" className="inline-flex items-center gap-2 px-8 py-4 bg-[#8A704C] text-white rounded-xl font-bold hover:bg-[#725a3d] transition-all shadow-lg">
+            <Link to="/partnerships/partner-institutions" className="inline-flex items-center gap-2 px-8 py-4 bg-[#8A704C] text-white rounded-xl font-bold hover:bg-[#725a3d] transition-all shadow-lg">
               View Partner Institutions <ArrowRight size={18} />
             </Link>
-            <Link to="/outbound/notice" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#003876] text-[#003876] rounded-xl font-bold hover:bg-blue-50 transition-all">
+            <Link to="/news-and-events/notice" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#003876] text-[#003876] rounded-xl font-bold hover:bg-blue-50 transition-all">
               Check Latest Announcements
             </Link>
           </div>

@@ -98,7 +98,7 @@ const OutboundFAQ: React.FC = () => {
                 </p>
               </div>
               <Link 
-                to="/intro/contact" 
+                to="/intro/contact-us" 
                 className="shrink-0 px-8 py-4 bg-white text-[#003876] rounded-xl font-bold hover:bg-gray-100 transition-all flex items-center gap-2 shadow-lg group"
               >
                 Go to Contact Us <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />

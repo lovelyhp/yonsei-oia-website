@@ -74,20 +74,20 @@ const CardSection: React.FC = () => {
           <SmallNoticeCard 
             title="Notice (SAY)" 
             items={LATEST_SAY_NOTICES} 
-            href="/inbound/notice" 
+            href="/inbound/programs/notice-say"
             icon={<Users size={18} />} 
           />
-          <SmallNoticeCard 
-            title="Notice (OIA)" 
-            items={LATEST_OIA_NOTICES} 
-            href="/outbound/notice" 
-            icon={<Globe2 size={18} />} 
+          <SmallNoticeCard
+            title="Notice (OIA)"
+            items={LATEST_OIA_NOTICES}
+            href="/news-and-events/notice"
+            icon={<Globe2 size={18} />}
           />
-          <SmallNoticeCard 
-            title="Announcements" 
-            items={LATEST_GENERAL_NOTICES} 
-            href="/news/announcements" 
-            icon={<Bell size={18} />} 
+          <SmallNoticeCard
+            title="Notice"
+            items={LATEST_GENERAL_NOTICES}
+            href="/news-and-events/notice"
+            icon={<Bell size={18} />}
           />
         </div>
       </div>

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { ChevronRight, Home, Download, Calendar, Book, FileText, Globe, GraduationCap, DollarSign, CheckCircle, Info, ExternalLink, Search, AlertCircle, Languages, Calculator, Scale, ShieldAlert, AlertTriangle, XCircle, Clock, UserCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ACADEMIC_CALENDAR_DATA } from '@/src/data/academicCalendarData';
+import type { CalendarEntry } from '@/src/data/academicCalendarData';
 
 const TABS = [
   { id: 'overview', title: 'Overview' },
@@ -190,23 +192,7 @@ const SAYProgram: React.FC = () => {
           </div>
         );
       case 'calendar':
-        return (
-          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="text-2xl font-bold text-[#003876] mb-6">Academic Calendar</h2>
-            <div className="bg-white border border-gray-200 rounded-2xl p-10 text-center">
-              <Calendar size={48} className="mx-auto text-gray-200 mb-4" />
-              <p className="text-gray-500 font-medium mb-6">View the detailed academic schedule for Exchange/Visiting students.</p>
-              <a 
-                href="https://oia.yonsei.ac.kr/intstd/exCalendar.asp" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 text-[#003876] font-bold hover:underline"
-              >
-                Go to Official Academic Calendar <ExternalLink size={16} />
-              </a>
-            </div>
-          </div>
-        );
+        return <AcademicCalendarTab />;
       case 'courses':
         return (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-12">
@@ -588,6 +574,142 @@ const SAYProgram: React.FC = () => {
 
         </div>
       </div>
+    </div>
+  );
+};
+
+const AcademicCalendarTab: React.FC = () => {
+  const [activeSemester, setActiveSemester] = useState(0);
+  const currentSemester = ACADEMIC_CALENDAR_DATA[activeSemester];
+
+  // Group entries by month for rowspan
+  const groupedByMonth: { month: string; entries: CalendarEntry[] }[] = [];
+  currentSemester.data.forEach((entry) => {
+    const last = groupedByMonth[groupedByMonth.length - 1];
+    if (last && last.month === entry.month) {
+      last.entries.push(entry);
+    } else {
+      groupedByMonth.push({ month: entry.month, entries: [entry] });
+    }
+  });
+
+  return (
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <h2 className="text-2xl font-bold text-[#003876] mb-6">Academic Calendar</h2>
+
+      {/* Semester Tabs */}
+      <div className="flex gap-2 mb-8">
+        {ACADEMIC_CALENDAR_DATA.map((sem, idx) => (
+          <button
+            key={sem.semester}
+            onClick={() => setActiveSemester(idx)}
+            className={`px-6 py-3 rounded-lg text-sm font-bold transition-all border ${
+              activeSemester === idx
+                ? 'bg-[#003876] text-white border-[#003876] shadow-lg'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-[#003876] hover:text-[#003876]'
+            }`}
+          >
+            {sem.semester}
+          </button>
+        ))}
+      </div>
+
+      {/* Calendar Table */}
+      <div className="border border-gray-200 rounded-2xl overflow-hidden">
+        {/* Desktop Table */}
+        <table className="w-full border-collapse hidden md:table">
+          <thead>
+            <tr className="bg-[#003876] text-white">
+              <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider text-left w-[140px] border-r border-white/20">Month</th>
+              <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider text-left w-[220px] border-r border-white/20">Date</th>
+              <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider text-left">Check List</th>
+            </tr>
+          </thead>
+          <tbody>
+            {groupedByMonth.map((group, gIdx) =>
+              group.entries.map((entry, eIdx) => {
+                const isTBA = entry.date === 'TBA';
+                return (
+                  <tr
+                    key={`${gIdx}-${eIdx}`}
+                    className={`border-b border-gray-100 hover:bg-gray-50 transition-colors ${eIdx === 0 && gIdx > 0 ? 'border-t-2 border-t-gray-200' : ''}`}
+                  >
+                    {eIdx === 0 && (
+                      <td
+                        rowSpan={group.entries.length}
+                        className="px-6 py-5 text-sm font-bold text-[#003876] align-top border-r border-gray-100 bg-gray-50/50"
+                      >
+                        {group.month}
+                      </td>
+                    )}
+                    <td className={`px-6 py-5 text-sm align-top border-r border-gray-100 ${isTBA ? 'text-gray-400 italic' : 'text-gray-700 font-medium'}`}>
+                      {entry.date}
+                    </td>
+                    <td className="px-6 py-5 text-sm text-gray-700 align-top">
+                      <span className="font-medium">{entry.checklist}</span>
+                      {entry.notes && entry.notes.length > 0 && (
+                        <ul className="mt-2 space-y-1.5">
+                          {entry.notes.map((note, nIdx) => (
+                            <li key={nIdx} className="flex items-start gap-2 text-gray-500 text-[13px]">
+                              <span className="text-[#8A704C] mt-[2px] shrink-0">·</span>
+                              {note.startsWith('http') ? (
+                                <a href={note} target="_blank" rel="noopener noreferrer" className="text-[#003876] underline break-all">{note}</a>
+                              ) : (
+                                <span>{note}</span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })
+            )}
+          </tbody>
+        </table>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden divide-y divide-gray-100">
+          {groupedByMonth.map((group, gIdx) => (
+            <div key={gIdx}>
+              <div className="bg-[#003876] text-white px-5 py-3 font-bold text-sm uppercase tracking-wider">
+                {group.month}
+              </div>
+              {group.entries.map((entry, eIdx) => {
+                const isTBA = entry.date === 'TBA';
+                return (
+                  <div key={eIdx} className="px-5 py-4 border-b border-gray-50">
+                    <div className={`text-xs font-semibold mb-1 ${isTBA ? 'text-gray-400 italic' : 'text-[#8A704C]'}`}>
+                      {entry.date}
+                    </div>
+                    <div className="text-sm text-gray-800 font-medium">{entry.checklist}</div>
+                    {entry.notes && entry.notes.length > 0 && (
+                      <ul className="mt-2 space-y-1">
+                        {entry.notes.map((note, nIdx) => (
+                          <li key={nIdx} className="flex items-start gap-2 text-gray-500 text-[12px]">
+                            <span className="text-[#8A704C] mt-[1px] shrink-0">·</span>
+                            {note.startsWith('http') ? (
+                              <a href={note} target="_blank" rel="noopener noreferrer" className="text-[#003876] underline break-all">{note}</a>
+                            ) : (
+                              <span>{note}</span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <p className="mt-6 text-sm text-gray-400 font-medium">
+        ※ Dates are subject to change without notice.
+      </p>
     </div>
   );
 };

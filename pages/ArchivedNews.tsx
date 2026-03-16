@@ -173,7 +173,7 @@ const ArchivedNews: React.FC = () => {
               <p className="text-gray-400 font-medium">For official press releases, campus photography permissions, or interviews, please contact our PR coordinator.</p>
             </div>
             <Link 
-              to="/intro/contact" 
+              to="/intro/contact-us" 
               className="px-10 py-4 bg-[#8A704C] hover:bg-[#725a3d] text-white rounded-2xl font-bold transition-all shadow-xl whitespace-nowrap"
             >
               Contact Press Office

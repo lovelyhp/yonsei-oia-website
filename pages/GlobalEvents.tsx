@@ -180,7 +180,7 @@ const GlobalEvents: React.FC = () => {
               <h4 className="text-xl font-bold text-[#003876] mb-2">Protocol & Visitor Inquiries</h4>
               <p className="text-gray-500 text-sm">For official visits or international protocol support, please contact our team.</p>
             </div>
-            <Link to="/intro/contact" className="px-8 py-4 bg-[#8A704C] text-white rounded-xl font-bold hover:bg-[#725a3d] transition-all shadow-lg">
+            <Link to="/intro/contact-us" className="px-8 py-4 bg-[#8A704C] text-white rounded-xl font-bold hover:bg-[#725a3d] transition-all shadow-lg">
               Contact Protocol Officer
             </Link>
           </div>

@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { ChevronRight, Home, Download, FileText, Calendar } from 'lucide-react';
+import { ChevronRight, Home, Download, FileText, Calendar, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const BROCHURES = [
-  { year: "2026", title: "2026 OIA Brochure", color: "bg-blue-600" },
-  { year: "2025", title: "2025 OIA Brochure", color: "bg-[#003876]" },
-  { year: "2024", title: "2024 OIA Brochure", color: "bg-[#8A704C]" },
-  { year: "2023", title: "2023 OIA Brochure", color: "bg-gray-800" },
+  { year: "2026", title: "2026 OIA Brochure" },
+  { year: "2025", title: "2025 OIA Brochure" },
+  { year: "2024", title: "2024 OIA Brochure" },
+  { year: "2023", title: "2023 OIA Brochure" },
 ];
 
 const Publications: React.FC = () => {
@@ -34,19 +34,23 @@ const Publications: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {BROCHURES.map((item) => (
               <div key={item.year} className="group">
-                <div className={`aspect-[3/4] ${item.color} rounded-2xl overflow-hidden shadow-lg relative mb-6 transition-transform group-hover:-translate-y-2 duration-500`}>
-                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                   <div className="absolute top-6 left-6 flex items-center gap-2 text-white/60 font-bold text-xs uppercase tracking-widest">
+                <div className="aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 relative mb-6 transition-transform group-hover:-translate-y-2 duration-500">
+                   <div className="absolute top-6 left-6 flex items-center gap-2 text-gray-400 font-bold text-xs uppercase tracking-widest">
                      <Calendar size={14} /> {item.year} EDITION
                    </div>
-                   <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white">
-                     <FileText size={64} className="mb-6 opacity-30" />
-                     <h3 className="text-xl font-bold leading-tight">{item.title}</h3>
+                   <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                     <FileText size={64} className="mb-6 text-gray-200" />
+                     <h3 className="text-xl font-bold leading-tight text-[#003876]">{item.title}</h3>
                    </div>
                 </div>
-                <button className="w-full flex items-center justify-center gap-2 py-3 bg-gray-50 hover:bg-[#003876] border border-gray-200 hover:border-[#003876] text-[#003876] hover:text-white font-bold rounded-xl transition-all shadow-sm">
-                  <Download size={18} /> PDF Download
-                </button>
+                <div className="flex gap-3">
+                  <button className="flex-1 flex items-center justify-center gap-2 py-3 bg-gray-50 hover:bg-[#003876] border border-gray-200 hover:border-[#003876] text-[#003876] hover:text-white font-bold rounded-xl transition-all shadow-sm">
+                    <Download size={18} /> PDF
+                  </button>
+                  <button className="flex-1 flex items-center justify-center gap-2 py-3 bg-gray-50 hover:bg-[#8A704C] border border-gray-200 hover:border-[#8A704C] text-[#8A704C] hover:text-white font-bold rounded-xl transition-all shadow-sm">
+                    <BookOpen size={18} /> E-Book
+                  </button>
+                </div>
               </div>
             ))}
           </div>

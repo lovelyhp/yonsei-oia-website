@@ -57,7 +57,7 @@ const VPMessage: React.FC = () => {
             <div className="w-full md:w-1/3">
               <div className="aspect-[3/4] bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative group">
                 <img 
-                  src="https://oia.yonsei.ac.kr/images/intro/vp3_v3.jpg" 
+                  src="https://devcms.yonsei.ac.kr/profileImg/6df39027c6d3207fcd26d9f7abb21622.jpg" 
                   alt="Prof. Yong-Chan Kim" 
                   className="w-full h-full object-cover"
                 />
@@ -104,11 +104,11 @@ const VPMessage: React.FC = () => {
                 dept="Professor, Department of Communication"
                 bio="Yong-Chan Kim (PhD, University of Southern California) is Vice President for International Affairs and Professor in the Department of Communication at Yonsei University, Seoul, Korea. He is also a professor at Pohang University of Science and Technology (Postech) at courtesy. He directs two research units at Yonsei: The Urban Communication Center and the Urban Communication Lab. For the past 20 years, his research program has been built around three key areas: urban communication, new media technology, and risk society. He has published more than 80 articles in prestigious journals such as Communication Research, New Media & Society, and Human Communication Research."
               />
-              <BioToggle 
-                name="Prof. Sang Hoon Youm"
+              <BioToggle
+                name="Prof. Sun Jae Jung"
                 title="Associate Vice President for International Affairs"
-                dept="Professor, Department of Architecture"
-                bio="Sang Hoon Youm, a graduate of Seoul National University and Columbia University in NY, is currently a Professor in the Department of Architecture and Architectural Engineering at Yonsei University. Leading the CAT Architecture and Urban Design Lab, he explores the interface between cities and architecture. His designs and research have been showcased at prestigious venues, including the National Museum of Modern and Contemporary Art Seoul and MoMA New York. Professor Youm also curated the Guest Cities Exhibition at the 4th Seoul Biennale of Architecture and Urbanism."
+                dept="Associate Professor, Department of Preventive Medicine"
+                bio="Sun Jae Jung, MD, MS, PhD, a graduate of Yonsei University College of Medicine and Seoul National University, is currently an Associate Professor in the Department of Preventive Medicine at Yonsei University College of Medicine. Leading the RE*MIND Lab, she investigates the bidirectional relationship between mental and physical health, with a particular focus on PTSD, depression, cognitive impairment, and sleep disorders. Her research draws on advanced epidemiological methods—including causal inference, marginal structural modeling, and mediation analysis—to uncover how biological factors such as cardiovascular, endocrine, and reproductive health intersect with social determinants in shaping population mental health outcomes. As a faculty member at Yonsei, she bridges rigorous academic research and public health practice, serving as Principal Investigator on multiple national projects funded by the Korean Ministry of Health and Welfare and the National Research Foundation, with total research funding exceeding $8 million. Professor Jung has held positions as a Yerby Postdoctoral Research Fellow and Visiting Scientist at the Harvard T.H. Chan School of Public Health, and served as a Visiting Scholar at the Center for Global Health at Massachusetts General Hospital. She has been invited to present her work at Harvard University, the Broad Institute, and leading international conferences. Her contributions to the field have been recognized with the Hyungwoodang Young Epidemiologist Award from the Korean Society of Epidemiology (2021) and the Best Young Investigator Award from Yonsei University College of Medicine (2022)."
               />
             </div>
           </div>

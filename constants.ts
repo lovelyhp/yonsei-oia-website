@@ -2,12 +2,18 @@
 import { Info, Handshake, LogIn, LogOut, Bell } from 'lucide-react';
 import React from 'react';
 
+export interface NavSubItem {
+  title: string;
+  href: string;
+  children?: { title: string; href: string }[];
+}
+
 export interface NavItem {
   title: string;
   href: string;
   description?: string;
   icon?: any;
-  subItems?: { title: string; href: string }[];
+  subItems?: NavSubItem[];
 }
 
 export const SITE_CONFIG = {
@@ -28,69 +34,91 @@ export const SITE_CONFIG = {
 export const NAVIGATION_DATA: NavItem[] = [
   {
     title: "Introduction",
-    href: "/intro/welcome/president",
+    href: "/intro/welcome-message/message-from-the-president",
     description: "About Yonsei OIA",
     icon: Info,
     subItems: [
-      { title: "Message from the President", href: "/intro/welcome/president" },
-      { title: "Message from the VP", href: "/intro/welcome/vp" },
-      { title: "Former Vice Presidents", href: "/intro/former-vps" },
-      { title: "About OIA", href: "/intro/about" },
-      { title: "Vision & Mission", href: "/intro/vision" },
-      { title: "Multimedia", href: "/intro/multimedia" },
+      {
+        title: "Welcome Message",
+        href: "/intro/welcome-message/message-from-the-president",
+        children: [
+          { title: "Message from the President", href: "/intro/welcome-message/message-from-the-president" },
+          { title: "Message from the VP", href: "/intro/welcome-message/message-from-the-vp" },
+        ]
+      },
+      {
+        title: "About OIA",
+        href: "/intro/about-oia/vision-and-mission",
+        children: [
+          { title: "Vision and Mission", href: "/intro/about-oia/vision-and-mission" },
+          { title: "Former Vice Presidents", href: "/intro/about-oia/former-vice-presidents" },
+        ]
+      },
       { title: "Publications", href: "/intro/publications" },
-      { title: "Contact Us", href: "/intro/contact" },
+      { title: "Contact Us", href: "/intro/contact-us" },
     ]
   },
   {
     title: "Partnerships",
-    href: "/partners/institutions",
+    href: "/partnerships/partner-institutions",
     description: "Global Networks",
     icon: Handshake,
     subItems: [
-      { title: "Partner Institutions", href: "/partners/institutions" },
-      { title: "Global Network", href: "/partners/network" },
-      { title: "Faculty Mobility", href: "/partners/faculty" },
+      { title: "Partner Institutions", href: "/partnerships/partner-institutions" },
+      { title: "Global Network", href: "/partnerships/global-network" },
+      { title: "Faculty Mobility", href: "/partnerships/faculty-mobility" },
     ]
   },
   {
     title: "Inbound",
-    href: "/inbound/notice",
+    href: "/inbound/programs/notice-say",
     description: "Coming to Yonsei",
     icon: LogIn,
     subItems: [
-      { title: "Notice (SAY)", href: "/inbound/notice" },
-      { title: "Study Abroad at Yonsei (SAY)", href: "/inbound/say" },
-      { title: "Yonsei International Summer School (YISS)", href: "/inbound/yiss" },
-      { title: "Winter Abroad at Yonsei (WAY)", href: "/inbound/way" },
-      { title: "Degree Seeking", href: "https://admission.yonsei.ac.kr/" },
-      { title: "Global One-Stop Service Center", href: "/inbound/gosc" },
+      {
+        title: "Programs",
+        href: "/inbound/programs/notice-say",
+        children: [
+          { title: "Notice (SAY)", href: "/inbound/programs/notice-say" },
+          { title: "Study Abroad at Yonsei (SAY)", href: "/inbound/programs/study-abroad-at-yonsei-say" },
+          { title: "Yonsei International Summer School (YISS)", href: "/inbound/programs/yonsei-international-summer-school-yiss" },
+          { title: "Winter Abroad at Yonsei (WAY)", href: "/inbound/programs/winter-abroad-at-yonsei-way" },
+        ]
+      },
+      { title: "Transcripts", href: "/inbound/transcripts" },
+      { title: "Degree Seeking", href: "/inbound/degree-seeking" },
+      { title: "Global One-Stop Service Center", href: "/inbound/global-one-stop-service-center" },
     ]
   },
   {
     title: "Outbound",
-    href: "/outbound/notice",
+    href: "/outbound/programs/exchange-student-program-esp",
     description: "Going Abroad",
     icon: LogOut,
     subItems: [
-      { title: "Notice (OIA)", href: "/outbound/notice" },
-      { title: "Exchange Student Program (ESP)", href: "/outbound/esp" },
-      { title: "Visiting Student Program (VSP)", href: "/outbound/vsp" },
-      { title: "Outbound Programs FAQ", href: "/outbound/faq" },
-      { title: "Outbound Scholarships", href: "/outbound/scholarships" },
-      { title: "Global Internship Program", href: "/outbound/internship" },
-      { title: "Experience Reports", href: "/outbound/reports" },
+      {
+        title: "Programs",
+        href: "/outbound/programs/exchange-student-program-esp",
+        children: [
+          { title: "Exchange Student Program (ESP)", href: "/outbound/programs/exchange-student-program-esp" },
+          { title: "Visiting Student Program (VSP)", href: "/outbound/programs/visiting-student-program-vsp" },
+          { title: "Outbound Scholarships", href: "/outbound/programs/outbound-scholarships" },
+          { title: "Outbound Programs FAQ", href: "/outbound/programs/outbound-programs-faq" },
+        ]
+      },
+      { title: "Global Internship Program", href: "/outbound/global-internship-program" },
+      { title: "Experience Reports", href: "/outbound/experience-reports" },
     ]
   },
   {
-    title: "News & Events",
-    href: "/news/announcements",
+    title: "News and Events",
+    href: "/news-and-events/notice",
     description: "Latest Updates",
     icon: Bell,
     subItems: [
-      { title: "Announcements", href: "/news/announcements" },
-      { title: "Global Events", href: "/news/events" },
-      { title: "Archived News", href: "/news/archive" },
+      { title: "Notice", href: "/news-and-events/notice" },
+      { title: "Global Events", href: "/news-and-events/global-events" },
+      { title: "Archived News", href: "/news-and-events/archived-news" },
     ]
   }
 ];
@@ -98,19 +126,19 @@ export const NAVIGATION_DATA: NavItem[] = [
 export const HERO_SLIDES = [
   {
     id: 1,
-    image: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/491935138_1036405128587134_3539924212542404863_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9MIhkS87PUoQ7kNvwFNfb42&_nc_oc=Adm2stkt5xCcrRBKp1uUG8qhXtUEaFsykX_1bMGuYSLSj0sIfDwE3rRsE_6m_FaAZy8&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=NIU54GSr_XwMrlz3CikafA&oh=00_AfoBX9-9lKuSVS_IewJ_M_bz7BJpL7WX3Pr2AQlliQu7Iw&oe=69814B9B",
+    image: "https://www.yonsei.ac.kr/sites/sc/atchmnfl_mngr/imageSlide/73/temp_1750298387242100.jpg",
     title: "Connecting Yonsei to the World",
     subtitle: "Experience a global education at Korea's most prestigious private university."
   },
   {
     id: 2,
-    image: "https://www.yonsei.ac.kr/sites/en_sc/images/main/global_img1.png",
+    image: "https://www.yonsei.ac.kr/sites/sc/atchmnfl_mngr/imageSlide/73/temp_1745222035084100.jpg",
     title: "Building Global Leaders",
     subtitle: "Over 740 partner institutions across 70 countries."
   },
   {
     id: 3,
-    image: "https://news.yonsei.ac.kr/frame/imagePreview?atchFileId=17344",
+    image: "https://gosc.yonsei.ac.kr/_res/gosc/img/main/slide02c.jpg",
     title: "Gateway to Excellence",
     subtitle: "Providing comprehensive support for international exchange and research."
   }
@@ -139,19 +167,19 @@ export const QUICK_LINKS = [
     title: "Study Abroad Guide", 
     icon: "Book", 
     description: "All you need to know about inbound programs.",
-    href: "/inbound/say"
+    href: "/inbound/programs/study-abroad-at-yonsei-say"
   },
   { 
     title: "OIA Outbound Programs", 
     icon: "Award", 
     description: "Exchange/Visiting Programs for Yonsei Students",
-    href: "/outbound/notice"
+    href: "/news-and-events/notice"
   },
   { 
     title: "Global Network", 
     icon: "Globe", 
     description: "Our worldwide partnerships and agreements.",
-    href: "/partners/institutions"
+    href: "/partnerships/partner-institutions"
   },
 ];
 
