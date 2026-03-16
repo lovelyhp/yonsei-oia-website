@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
         ))}
 
         {/* Slide Controls */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-3 md:right-8 z-30 flex flex-col gap-2 md:gap-3">
+        <div className="absolute top-1/3 -translate-y-1/2 md:top-1/2 right-3 md:right-8 z-30 flex flex-col gap-2 md:gap-3">
           <button onClick={prev} className="p-2.5 rounded-full border border-white/30 text-white hover:bg-[#003876] hover:border-[#003876] transition-all backdrop-blur-sm">
             <ChevronLeft size={20} />
           </button>
