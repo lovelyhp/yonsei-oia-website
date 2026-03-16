@@ -149,17 +149,17 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
           {/* Logo Area */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-2 md:gap-3">
             <img
               src="https://yonsei.ac.kr/sites/sc/images/sub/img-symbol1.png"
               alt="Yonsei University"
-              className="h-10 md:h-12 w-auto"
+              className="h-8 md:h-10 lg:h-12 w-auto"
             />
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-bold tracking-tight text-[#003876]">
+              <span className="text-sm md:text-xl lg:text-2xl font-bold tracking-tight text-[#003876]">
                 {SITE_CONFIG.universityName}
               </span>
-              <span className="text-xs md:text-sm font-medium text-[#8A704C] tracking-wide uppercase">
+              <span className="text-[9px] md:text-xs lg:text-sm font-medium text-[#8A704C] tracking-wide uppercase">
                 {SITE_CONFIG.officeName}
               </span>
             </div>

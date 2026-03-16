@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
   return (
     <>
       {/* ─── Hero Slide ─── */}
-      <section className="relative h-[500px] lg:h-[600px] overflow-hidden bg-gray-900">
+      <section className="relative h-[420px] md:h-[500px] lg:h-[600px] overflow-hidden bg-gray-900">
         {/* Slides */}
         {HERO_SLIDES.map((slide, idx) => (
           <div
@@ -91,12 +91,12 @@ const Hero: React.FC = () => {
             />
 
             {/* Title overlay — positioned above the bottom overlay cards */}
-            <div className="absolute inset-0 z-20 flex flex-col justify-start pt-[120px] lg:pt-[140px] pb-[170px] lg:pb-[185px] container mx-auto px-6 lg:px-12">
+            <div className="absolute inset-0 z-20 flex flex-col justify-start pt-[80px] md:pt-[100px] lg:pt-[140px] pb-[120px] md:pb-[150px] lg:pb-[185px] container mx-auto px-4 md:px-6 lg:px-12">
               <div className={`transition-all duration-700 delay-300 transform ${idx === current ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                <h2 className="text-3xl lg:text-6xl font-bold text-white mb-4 leading-[1.1] max-w-3xl drop-shadow-2xl">
+                <h2 className="text-2xl md:text-3xl lg:text-6xl font-bold text-white mb-3 md:mb-4 leading-[1.1] max-w-3xl drop-shadow-2xl">
                   {slide.title}
                 </h2>
-                <p className="text-base lg:text-xl text-white/90 max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-lg">
+                <p className="text-sm md:text-base lg:text-xl text-white/90 max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-lg">
                   {slide.subtitle}
                 </p>
               </div>
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
         ))}
 
         {/* Slide Controls */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-8 z-30 flex flex-col gap-3">
+        <div className="absolute top-1/2 -translate-y-1/2 right-3 md:right-8 z-30 flex flex-col gap-2 md:gap-3">
           <button onClick={prev} className="p-2.5 rounded-full border border-white/30 text-white hover:bg-[#003876] hover:border-[#003876] transition-all backdrop-blur-sm">
             <ChevronLeft size={20} />
           </button>
@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Progress Dots */}
-        <div className="absolute bottom-[140px] lg:bottom-[160px] left-8 lg:left-12 z-30 flex gap-2">
+        <div className="absolute bottom-[100px] md:bottom-[130px] lg:bottom-[160px] left-4 md:left-8 lg:left-12 z-30 flex gap-2">
           {HERO_SLIDES.map((_, idx) => (
             <button
               key={idx}
@@ -129,8 +129,8 @@ const Hero: React.FC = () => {
 
         {/* ─── Overlay UI (3 columns at bottom) ─── */}
         <div className="absolute bottom-0 left-0 w-full z-40">
-          <div className="container mx-auto px-4 lg:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-2 lg:gap-3 pb-3 lg:pb-5">
+          <div className="container mx-auto px-3 md:px-4 lg:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-2 lg:gap-3 pb-2 md:pb-3 lg:pb-5">
               {/* Left: Shortcut Buttons */}
               <div className="hidden lg:flex flex-col gap-2">
                 {shortcuts.left.map((item) => (
@@ -147,8 +147,8 @@ const Hero: React.FC = () => {
 
               {/* Center: Notice Widget */}
               <div className="bg-black/40 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 overflow-hidden">
-                <div className="px-5 py-2.5 flex items-center justify-between border-b border-white/15">
-                  <h3 className="font-bold text-white text-[17px]">Notice</h3>
+                <div className="px-4 md:px-5 py-2 md:py-2.5 flex items-center justify-between border-b border-white/15">
+                  <h3 className="font-bold text-white text-[15px] md:text-[17px]">Notice</h3>
                   <Link to="/news-and-events/notice" className="text-[13px] font-bold text-white bg-white/20 hover:bg-[#003876] px-4 py-1.5 rounded-md transition-colors flex items-center gap-1.5">
                     more <ArrowRight size={13} />
                   </Link>
@@ -158,12 +158,12 @@ const Hero: React.FC = () => {
                     <Link
                       key={item.id}
                       to="/news-and-events/notice"
-                      className="flex items-center justify-between px-5 py-2.5 hover:bg-white/10 transition-colors group"
+                      className="flex items-center justify-between px-4 md:px-5 py-2 md:py-2.5 hover:bg-white/10 transition-colors group"
                     >
-                      <span className="text-[14px] font-medium text-white/90 group-hover:text-white transition-colors line-clamp-1 flex-1 mr-4">
+                      <span className="text-[13px] md:text-[14px] font-medium text-white/90 group-hover:text-white transition-colors line-clamp-1 flex-1 mr-3 md:mr-4">
                         {item.title}
                       </span>
-                      <span className="text-[12px] text-white/60 font-medium shrink-0 flex items-center gap-1">
+                      <span className="text-[12px] text-white/60 font-medium shrink-0 hidden sm:flex items-center gap-1">
                         <Calendar size={11} /> {item.date}
                       </span>
                     </Link>
@@ -190,18 +190,18 @@ const Hero: React.FC = () => {
       </section>
 
       {/* ─── Statistics Counter Section ─── */}
-      <section className="bg-white py-16 lg:py-20 border-b border-gray-100">
+      <section className="bg-white py-10 md:py-16 lg:py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 md:gap-10 lg:gap-16 max-w-5xl mx-auto">
             {STATS_DATA.map((stat) => {
               const { count, ref } = useCountUp(stat.value);
               return (
                 <div key={stat.label} ref={ref} className="text-center">
-                  <div className="text-5xl lg:text-6xl font-bold text-[#003876] mb-3 tabular-nums">
+                  <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#003876] mb-2 md:mb-3 tabular-nums">
                     {count}
                     {stat.suffix && <span className="text-3xl lg:text-4xl">{stat.suffix}</span>}
                   </div>
-                  <p className="text-sm lg:text-base text-gray-500 font-medium leading-snug">
+                  <p className="text-[11px] md:text-sm lg:text-base text-gray-500 font-medium leading-snug">
                     {stat.label}
                   </p>
                 </div>
@@ -225,12 +225,12 @@ const ProgramCardsSection: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="bg-white py-16 lg:py-20 border-b border-gray-100">
+    <section className="bg-white py-10 md:py-16 lg:py-20 border-b border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
-        <div className="mb-10">
-          <span className="text-[12px] font-bold text-[#8A704C] uppercase tracking-[0.15em]">Yonsei OIA</span>
-          <h2 className="text-2xl lg:text-3xl font-bold text-[#003876] mt-1">Our Programs</h2>
+        <div className="mb-6 md:mb-10">
+          <span className="text-[11px] md:text-[12px] font-bold text-[#8A704C] uppercase tracking-[0.15em]">Yonsei OIA</span>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#003876] mt-1">Our Programs</h2>
         </div>
 
         {/* Cards grid */}
@@ -240,7 +240,7 @@ const ProgramCardsSection: React.FC = () => {
             return (
               <div
                 key={card.title}
-                className={`relative min-h-[280px] p-7 flex flex-col transition-colors duration-300 ${
+                className={`relative min-h-[240px] md:min-h-[280px] p-5 md:p-7 flex flex-col transition-colors duration-300 ${
                   isHovered ? 'bg-gray-50/80' : 'bg-white'
                 } ${idx < 2 ? 'md:border-r border-b md:border-b-0 border-gray-200' : ''}`}
                 onMouseEnter={() => setHovered(idx)}
@@ -328,21 +328,21 @@ const GlobalEventsSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-gray-50 py-16 lg:py-20">
+    <section ref={sectionRef} className="bg-gray-50 py-10 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="flex items-center justify-between mb-10">
-          <h2 className="text-2xl lg:text-3xl font-bold text-[#003876]">Global Events</h2>
+        <div className="flex items-center justify-between mb-6 md:mb-10">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#003876]">Global Events</h2>
           <Link
             to="/news-and-events/global-events"
-            className="text-[14px] font-bold text-white bg-[#003876] hover:bg-[#002a5a] px-5 py-2 rounded-lg transition-colors flex items-center gap-1.5"
+            className="text-[12px] md:text-[14px] font-bold text-white bg-[#003876] hover:bg-[#002a5a] px-3 md:px-5 py-1.5 md:py-2 rounded-lg transition-colors flex items-center gap-1.5"
           >
             more <ArrowRight size={14} />
           </Link>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {GLOBAL_EVENTS_DATA.slice(0, 3).map((event, idx) => (
             <Link
               key={event.id}
@@ -361,8 +361,8 @@ const GlobalEventsSection: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-[15px] font-bold text-gray-800 group-hover:text-[#003876] transition-colors line-clamp-2 mb-3 leading-snug">
+              <div className="p-4 md:p-5">
+                <h3 className="text-[14px] md:text-[15px] font-bold text-gray-800 group-hover:text-[#003876] transition-colors line-clamp-2 mb-2 md:mb-3 leading-snug">
                   {event.title}
                 </h3>
                 <div className="flex items-center gap-4 text-[12px] text-gray-400 font-medium">
