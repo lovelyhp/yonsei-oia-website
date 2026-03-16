@@ -274,27 +274,27 @@ const Announcements: React.FC = () => {
                       </span>
                     </td>
 
-                    <td className="px-4 md:px-6 py-5">
-                      <div className="flex flex-col gap-1">
-                        <div className="flex items-start gap-2">
+                    <td className="px-3 md:px-6 py-3 md:py-5">
+                      <div className="flex flex-col">
+                        <div className="flex items-start gap-1.5 md:gap-2 flex-wrap">
                           {item.type === 'pinned' && (
-                            <span className="md:hidden bg-[#003876] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase shrink-0 mt-[3px]">
+                            <span className="md:hidden bg-[#003876] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase shrink-0 mt-[2px]">
                               Notice
                             </span>
                           )}
-                          <span className={`md:hidden inline-block text-[9px] font-bold px-1.5 py-0.5 rounded border shrink-0 mt-[3px] ${style.bg} ${style.text} uppercase`}>
+                          <span className={`md:hidden inline-block text-[9px] font-bold px-1.5 py-0.5 rounded border shrink-0 mt-[2px] ${style.bg} ${style.text} uppercase`}>
                             {item.category}
                           </span>
-                          <span className={`text-[15px] md:text-base leading-tight group-hover:text-[#003876] transition-colors ${item.type === 'pinned' ? 'font-bold' : 'font-medium'}`}>
+                          <span className={`text-[13px] md:text-base leading-snug group-hover:text-[#003876] transition-colors ${item.type === 'pinned' ? 'font-bold' : 'font-medium'}`}>
                             {item.subject}
                           </span>
                           {item.hasAttachment && (
-                            <Paperclip size={14} className="text-[#8A704C] shrink-0 mt-[4px] md:mt-[5px]" />
+                            <Paperclip size={14} className="text-[#8A704C] shrink-0 mt-[3px] md:mt-[5px]" />
                           )}
                         </div>
-                        <div className="flex md:hidden items-center gap-4 mt-2 text-[12px] text-gray-400 font-medium">
-                          <span className="flex items-center gap-1"><Calendar size={12} /> {item.date}</span>
-                          <span className="flex items-center gap-1"><Eye size={12} /> {item.views}</span>
+                        <div className="flex md:hidden items-center gap-3 mt-1.5 text-[11px] text-gray-400 font-medium">
+                          <span className="flex items-center gap-1"><Calendar size={11} /> {item.date}</span>
+                          <span className="flex items-center gap-1"><Eye size={11} /> {item.views.toLocaleString()}</span>
                         </div>
                       </div>
                     </td>
