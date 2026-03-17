@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const STAFF_DATA = {
   management: [
     { role: "Vice President for International Affairs", name: "Prof. Yong-Chan KIM (김용찬 국제처장)", tel: "", email: "" },
-    { role: "Associate Vice President & GOSC Executive Director", name: "Prof. Sang Hoon YOUM (염상훈 국제부처장)", tel: "", email: "" },
+    { role: "Associate Vice President for International Affairs", name: "Prof. Sun Jae JUNG (정선재 국제부처장)", tel: "", email: "" },
     { role: "YISS/WAY Chair", name: "Prof. Jon SODERHOLM (소더홈존 주임교수)", tel: "", email: "" },
   ],
   international: [
